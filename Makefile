@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: reratsam <reratsam@student.42.fr>          +#+  +:+       +#+         #
+#    By: remypc <remypc@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/10 17:11:52 by reratsam          #+#    #+#              #
-#    Updated: 2025/11/11 14:50:50 by reratsam         ###   ########.fr        #
+#    Updated: 2025/11/12 18:45:37 by remypc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRCS =     ft_printf.c \
         print_string.c \
         print_int.c \
         print_char.c \
-        print_hex.c
+        print_hex.c \
+		ft_utils.c
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reratsam <reratsam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: remypc <remypc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:52:21 by reratsam          #+#    #+#             */
-/*   Updated: 2025/11/11 13:27:46 by reratsam         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:21:23 by remypc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,25 @@ int	print_pointer(unsigned long value, int asc)
 	int				i;
 	int				*iptr;
 
+	if (value == 0)
+		return (print_string("(nil)"));
 	iptr = &i;
 	tempval = value;
 	printout = create_string(value, iptr);
 	if (!printout)
 		return (0);
-	while (tempval != 0 && i-- >= 0)
+	while (tempval != 0)
 	{
 		if ((tempval % 16) < 10)
-			printout[i + 1] = (tempval % 16) + 48;
+			printout[i] = (tempval % 16) + 48;
 		else
-			printout[i + 1] = (tempval % 16) + asc;
+			printout[i] = (tempval % 16) + asc;
 		tempval = tempval / 16;
+		i--;
 	}
 	i = ft_strlen(printout);
 	i = i + print_string("0x");
 	ft_putstr_fd(printout, 1);
 	free(printout);
-	if (value == 0)
-		i += print_char('0');
 	return (i);
 }

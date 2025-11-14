@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reratsam <reratsam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: remypc <remypc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:21:18 by reratsam          #+#    #+#             */
-/*   Updated: 2025/11/11 13:27:48 by reratsam         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:21:22 by remypc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static int	check_type(const char *input, va_list args)
 
 int	ft_printf(const char *input, ...)
 {
-	va_list			args;
-	unsigned int	i;
+	va_list	args;
+	int		i;
 
 	i = 0;
 	va_start(args, input);
